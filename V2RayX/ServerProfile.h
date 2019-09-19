@@ -7,12 +7,12 @@
 
 #import <Foundation/Foundation.h>
 #import "AppDelegate.h"
+#import "utilities.h"
 
 typedef enum SecurityType : NSUInteger {
-    aes_128_cfb,
+    auto_,
     aes_128_gcm,
     chacha20_poly130,
-    auto_,
     none
 } SecurityType;
 
@@ -21,6 +21,7 @@ typedef enum NetWorkType : NSUInteger {
     kcp,
     ws,
     http,
+    quic
 } NetWorkType;
 
 @interface ServerProfile : NSObject
@@ -34,7 +35,7 @@ typedef enum NetWorkType : NSUInteger {
 @property (nonatomic) NSString* userId;
 @property (nonatomic) NSUInteger alterId;
 @property (nonatomic) NSUInteger level;
-@property (nonatomic) NSString* remark;
+@property (nonatomic) NSString* outboundTag;
 @property (nonatomic) SecurityType security;
 @property (nonatomic) NetWorkType network;
 @property (nonatomic) NSString* sendThrough;
